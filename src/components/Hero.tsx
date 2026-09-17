@@ -82,9 +82,7 @@ export default function Hero() {
           </a>
         </div>
 
-        <p className="mt-6 text-sm text-cream/60">
-          100% free &middot; Replay available for a limited time
-        </p>
+        <p className="mt-6 text-sm text-cream/60">100% free to attend live</p>
       </div>
     </section>
   );
