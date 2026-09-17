@@ -18,37 +18,29 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  // -----------------------------------------------------------------------
-  // TODO: send this lead to GoHighLevel once you've decided how to connect.
-  //
-  // Option A — GHL Private Integration / Contacts API:
-  //   const res = await fetch("https://services.leadconnectorhq.com/contacts/", {
-  //     method: "POST",
-  //     headers: {
-  //       Authorization: `Bearer ${process.env.GHL_API_TOKEN}`,
-  //       Version: "2021-07-28",
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify({
-  //       locationId: process.env.GHL_LOCATION_ID,
-  //       name,
-  //       email,
-  //       phone,
-  //     }),
-  //   });
-  //
-  // Option B — GHL Inbound Webhook (Workflow trigger):
-  //   await fetch(process.env.GHL_WEBHOOK_URL!, {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify({ name, email, phone, consent }),
-  //   });
-  //
-  // Add the relevant env vars in Vercel Project Settings -> Environment
-  // Variables, then uncomment one of the options above.
-  // -----------------------------------------------------------------------
+  const webhookUrl = process.env.GHL_WEBHOOK_URL;
 
-  console.log("New webinar signup:", { name, email, phone, consent });
+  if (!webhookUrl) {
+    console.error("GHL_WEBHOOK_URL is not set — signup was not forwarded.");
+    return NextResponse.json(
+      { error: "Signup is not configured yet. Please try again later." },
+      { status: 500 },
+    );
+  }
+
+  const ghlRes = await fetch(webhookUrl, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ name, email, phone, consent }),
+  });
+
+  if (!ghlRes.ok) {
+    console.error("GHL webhook rejected the signup:", ghlRes.status);
+    return NextResponse.json(
+      { error: "Could not save your signup. Please try again." },
+      { status: 502 },
+    );
+  }
 
   return NextResponse.json({ ok: true });
 }
