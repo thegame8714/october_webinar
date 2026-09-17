@@ -1,7 +1,8 @@
 // TODO: if you add a specific start time, update the copy below to match
 const WEBINAR_DATE_LABEL = "October 29, 2026";
-const WEBINAR_HEADLINE_LEAD = "TURN YOUR UNDERPERFORMER INTO YOUR TOP PERFORMER";
-const WEBINAR_HEADLINE_HIGHLIGHT = "WITHOUT MANAGING THEM OUT";
+const WEBINAR_HEADLINE = "You're clear, they are confused";
+const WEBINAR_TAGLINE =
+  "Spend less time repeating yourself and more time coaching your team to perform";
 const WEBINAR_SUBHEADLINE =
   "In 60 minutes, I'll walk you through the 4 U's — the exact framework I use to turn struggling team members around, built from my own years as an Engineering Manager, including the year I nearly stepped away from the role myself.";
 
@@ -32,9 +33,12 @@ export default function Hero() {
         </span>
 
         <h1 className="text-2xl font-bold leading-tight tracking-tight sm:text-3xl md:text-4xl">
-          {WEBINAR_HEADLINE_LEAD}{" "}
-          <span className="text-amber">{WEBINAR_HEADLINE_HIGHLIGHT}</span>
+          {WEBINAR_HEADLINE}
         </h1>
+
+        <p className="mt-3 max-w-xl text-sm text-cream/70 sm:text-base">
+          {WEBINAR_TAGLINE}
+        </p>
 
         <div className="mt-8 w-full max-w-2xl overflow-hidden rounded-2xl border border-cream/10 bg-navy shadow-xl">
           <div className="relative aspect-video w-full">
