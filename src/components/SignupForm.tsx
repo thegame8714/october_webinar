@@ -133,7 +133,7 @@ export default function SignupForm() {
           disabled={status === "submitting"}
           className="mt-2 rounded-full bg-amber px-8 py-4 text-base font-semibold text-cream transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60"
         >
-          {status === "submitting" ? "Saving your seat..." : "Save My Free Seat"}
+          {status === "submitting" ? "Submitting..." : "I'm in!"}
         </button>
       </div>
     </form>

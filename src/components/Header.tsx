@@ -10,7 +10,7 @@ export default function Header() {
           href="#signup"
           className="rounded-full bg-amber px-5 py-2.5 text-sm font-semibold text-cream transition hover:brightness-110"
         >
-          Save My Seat
+          I&apos;m in!
         </a>
       </div>
     </header>
