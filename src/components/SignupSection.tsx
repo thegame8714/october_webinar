@@ -12,8 +12,8 @@ export default function SignupSection() {
             Reserve Your Free Spot Now
           </h2>
           <p className="mt-4 text-lg text-cream/70">
-            Seats are limited &mdash; sign up now to guarantee access and get
-            a reminder before we go live.
+            Sign up now to guarantee access and get a reminder before we go
+            live.
           </p>
           <ul className="mt-8 space-y-3 text-cream/80">
             <li className="flex items-center gap-3">

@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Free Webinar — Save Your Seat",
   description:
-    "Join our free live webinar this October. Reserve your seat now.",
+    "Join our free live webinar on October 29, 2026. Reserve your seat now.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
