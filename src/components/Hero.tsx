@@ -10,9 +10,8 @@ const WEBINAR_TAGLINE =
 const WEBINAR_SUBHEADLINE =
   "In 60 minutes, I'll walk you through the 4 U's — the exact framework I use to turn struggling team members around, built from my own years as an Engineering Manager, including the year I nearly stepped away from the role myself.";
 
-// To go live: set NEXT_PUBLIC_WEBINAR_VIDEO_URL in your Vercel project's
-// environment variables to a YouTube/Vimeo/Wistia EMBED url, e.g.
-// https://www.youtube.com/embed/VIDEO_ID
+// Self-hosted video (Vercel Blob) — set NEXT_PUBLIC_WEBINAR_VIDEO_URL in
+// your Vercel project's environment variables to the direct .mp4 blob URL.
 const videoUrl = process.env.NEXT_PUBLIC_WEBINAR_VIDEO_URL;
 
 export default function Hero() {
@@ -44,16 +43,18 @@ export default function Hero() {
           {WEBINAR_TAGLINE}
         </p>
 
-        <div className="mt-8 w-full max-w-2xl overflow-hidden rounded-2xl border border-cream/10 bg-navy shadow-xl">
-          <div className="relative aspect-video w-full">
+        <div className="mt-8 w-full max-w-xs overflow-hidden rounded-2xl border border-cream/10 bg-navy shadow-xl sm:max-w-sm">
+          <div className="relative aspect-[9/16] w-full">
             {videoUrl ? (
-              <iframe
+              <video
                 src={videoUrl}
-                title="Webinar preview"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="absolute inset-0 h-full w-full"
-              />
+                controls
+                preload="metadata"
+                playsInline
+                className="absolute inset-0 h-full w-full object-cover"
+              >
+                Your browser does not support the video tag.
+              </video>
             ) : (
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-gradient-to-br from-navy to-navy-dark text-cream/80">
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-amber/90">
