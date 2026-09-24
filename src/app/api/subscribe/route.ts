@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { SIGNUP_COOKIE_NAME, SIGNUP_COOKIE_MAX_AGE } from "@/lib/signup-cookie";
 
 type SubscribePayload = {
   name: string;
@@ -42,5 +43,14 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  return NextResponse.json({ ok: true });
+  const res = NextResponse.json({ ok: true });
+  res.cookies.set(SIGNUP_COOKIE_NAME, "1", {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "lax",
+    path: "/",
+    maxAge: SIGNUP_COOKIE_MAX_AGE,
+  });
+
+  return res;
 }

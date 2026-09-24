@@ -1,10 +1,12 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { useRouter } from "next/navigation";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
 export default function SignupForm() {
+  const router = useRouter();
   const [status, setStatus] = useState<Status>("idle");
   const [errorMessage, setErrorMessage] = useState("");
   const [consent, setConsent] = useState(false);
@@ -41,6 +43,8 @@ export default function SignupForm() {
       setStatus("success");
       form.reset();
       setConsent(false);
+      // Brief confirmation, then on to the VIP upsell.
+      setTimeout(() => router.push("/upsell"), 900);
     } catch {
       setStatus("error");
       setErrorMessage("Something went wrong. Please try again.");

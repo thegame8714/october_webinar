@@ -1,22 +1,20 @@
+import Image from "next/image";
+
 // TODO: replace with real testimonials (names, roles, photos, quotes)
 const testimonials = [
   {
     quote:
-      "This webinar completely changed how we think about our pipeline. We implemented one idea from the first 20 minutes and saw results within a week.",
-    name: "Jane Doe",
-    role: "Marketing Director, Acme Co.",
+      "I received guidance on building trust within my team. The advice was valuable and it will help me in building my career going forwards",
+    name: "Yuvika A.",
+    role: "Engineering Manager",
+    photo: "/testimonials/yuvika-a.jpg",
   },
   {
     quote:
-      "Clear, actionable, and no fluff. I've sat through a lot of webinars and this was genuinely one of the best.",
-    name: "John Smith",
-    role: "Founder, Smith Consulting",
-  },
-  {
-    quote:
-      "I loved that it was practical, not theoretical. Walked away with a checklist I could use the same day.",
-    name: "Maria Lopez",
-    role: "Head of Growth, Nova Studio",
+      "Fabio taught how to remove bottlenecks, establish clear accountability, and gave me the psychological safety to innovate without fear of failure",
+    name: "Mihai M.",
+    role: "Engineering Manager - QA",
+    photo: "/testimonials/mihai-m.jpg",
   },
 ];
 
@@ -33,7 +31,7 @@ export default function Testimonials() {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto mt-14 grid max-w-3xl gap-6 sm:grid-cols-2">
           {testimonials.map((t) => (
             <figure
               key={t.name}
@@ -46,15 +44,25 @@ export default function Testimonials() {
                 {t.quote}
               </blockquote>
               <figcaption className="mt-6 flex items-center gap-3">
-                <div
-                  aria-hidden
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-purple text-sm font-semibold text-cream"
-                >
-                  {t.name
-                    .split(" ")
-                    .map((n) => n[0])
-                    .join("")}
-                </div>
+                {t.photo ? (
+                  <Image
+                    src={t.photo}
+                    alt={t.name}
+                    width={40}
+                    height={40}
+                    className="h-10 w-10 flex-none rounded-full object-cover"
+                  />
+                ) : (
+                  <div
+                    aria-hidden
+                    className="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-purple text-sm font-semibold text-cream"
+                  >
+                    {t.name
+                      .split(" ")
+                      .map((n) => n[0])
+                      .join("")}
+                  </div>
+                )}
                 <div>
                   <p className="text-sm font-semibold text-cream">
                     {t.name}

@@ -17,12 +17,12 @@ const faqs = [
   {
     question: "Is this recorded if I can't make it live?",
     answer:
-      "The replay is only available with VIP access ($47) — see the option at registration. Live attendance is free either way.",
+      "The replay is only available with VIP access ($67) — see the option at registration. Live attendance is free either way.",
   },
   {
     question: "What's the cost?",
     answer:
-      "Free to attend live. Optional $47 VIP add-on includes the recording.",
+      "Free to attend live. Optional $67 VIP add-on includes the recording.",
   },
   {
     question: "Is this for new managers, experienced managers, or both?",
