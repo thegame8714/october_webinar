@@ -16,6 +16,13 @@ const testimonials = [
     role: "Engineering Manager - QA",
     photo: "/testimonials/mihai-m.jpg",
   },
+  {
+    quote:
+      "Fabio has a great listening presence as a coach. He is not afraid to challenge when the client is stuck and has the ability to ask simple and yet powerful questions. Fabio does not follow a script but is able to use different techniques",
+    name: "Giovanni Amodeo",
+    role: "Private Markets Executive",
+    photo: "/testimonials/giovanni-amodeo.jpg",
+  },
 ];
 
 export default function Testimonials() {
@@ -31,7 +38,7 @@ export default function Testimonials() {
           </p>
         </div>
 
-        <div className="mx-auto mt-14 grid max-w-3xl gap-6 sm:grid-cols-2">
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((t) => (
             <figure
               key={t.name}

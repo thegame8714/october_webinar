@@ -1,5 +1,6 @@
 import Countdown from "./Countdown";
 
+const WEBINAR_NAME = "Leading Communication";
 // TODO: if you add a specific start time, update the copy below to match
 const WEBINAR_DATE_LABEL = "October 29, 2026";
 // TODO: set the exact start time (currently a placeholder: 10am PT / 5pm UTC)
@@ -32,7 +33,7 @@ export default function Hero() {
 
       <div className="relative mx-auto flex max-w-3xl flex-col items-center px-6 py-14 text-center sm:py-24">
         <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-amber/40 bg-amber/10 px-4 py-1.5 text-sm font-medium text-amber">
-          Free Live Webinar &middot; {WEBINAR_DATE_LABEL}
+          {WEBINAR_NAME} &middot; Free Live Webinar &middot; {WEBINAR_DATE_LABEL}
         </span>
 
         <h1 className="text-2xl font-bold leading-tight tracking-tight sm:text-3xl md:text-4xl">

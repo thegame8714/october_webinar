@@ -64,10 +64,13 @@ export default function SignupForm() {
 
   return (
     <form onSubmit={handleSubmit} className="rounded-2xl bg-cream p-6 shadow-xl sm:p-8">
+      <p className="mb-4 text-xs text-navy/50">
+        <span className="text-red-600">*</span> Required
+      </p>
       <div className="grid gap-5">
         <div>
           <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-navy">
-            Full name
+            Full name <span className="text-red-600">*</span>
           </label>
           <input
             id="name"
@@ -82,7 +85,7 @@ export default function SignupForm() {
 
         <div>
           <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-navy">
-            Email address
+            Email address <span className="text-red-600">*</span>
           </label>
           <input
             id="email"
