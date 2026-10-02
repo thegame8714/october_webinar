@@ -1,10 +1,10 @@
 import Countdown from "./Countdown";
+import {
+  WEBINAR_NAME,
+  WEBINAR_DATE_LABEL,
+  WEBINAR_DATETIME_ISO,
+} from "@/lib/webinar";
 
-const WEBINAR_NAME = "Leading Communication";
-// TODO: if you add a specific start time, update the copy below to match
-const WEBINAR_DATE_LABEL = "October 29, 2026";
-// TODO: set the exact start time (currently a placeholder: 10am PT / 5pm UTC)
-const WEBINAR_DATETIME_ISO = "2026-10-29T17:00:00Z";
 const WEBINAR_HEADLINE = "You're clear, they are confused";
 const WEBINAR_TAGLINE =
   "Spend less time repeating yourself and more time coaching your team to perform";
