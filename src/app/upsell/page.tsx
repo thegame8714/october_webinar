@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 import { SIGNUP_COOKIE_NAME } from "@/lib/signup-cookie";
 
 export const metadata: Metadata = {
-  title: "VIP Access — One More Step",
+  title: "VIP Access, One More Step",
   description: "Upgrade your free registration to VIP access.",
 };
 
@@ -29,9 +29,9 @@ const DELIVERABLES = [
     value: "$97",
   },
   {
-    name: "Speaker Slide Deck & Action Checklist",
+    name: "Speaker Slide Deck",
     description:
-      "The exact reference slides and checklist so you don't have to scramble taking notes during the session.",
+      "The exact reference slides so you don't have to scramble taking notes during the session.",
     value: "$47",
   },
 ];
@@ -43,7 +43,7 @@ const COMPARISON_ROWS = [
   { feature: "Extended live Q&A after the session", free: false, vip: true },
   { feature: "Lifetime recording access", free: false, vip: true },
   {
-    feature: "Downloadable slides & action checklist",
+    feature: "Downloadable slides",
     free: false,
     vip: true,
   },
@@ -93,11 +93,33 @@ export default async function UpsellPage() {
           STEP 2 OF 2 &middot; YOUR FREE SEAT IS RESERVED
         </p>
 
-        <p className="mt-5 text-xs font-bold tracking-wide text-amber">
-          DO NOT CLOSE THIS PAGE &mdash; ONE-TIME ATTENDEE OPPORTUNITY
-        </p>
+        <div
+          role="alert"
+          className="mt-6 flex w-full max-w-xl items-start gap-3 rounded-xl border-2 border-amber bg-amber/10 px-5 py-4 text-left shadow-lg shadow-amber/10"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            className="mt-0.5 h-6 w-6 flex-none text-amber"
+            aria-hidden
+          >
+            <path
+              fillRule="evenodd"
+              d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003zM12 8.25a.75.75 0 01.75.75v3.75a.75.75 0 01-1.5 0V9a.75.75 0 01.75-.75zm0 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z"
+              clipRule="evenodd"
+            />
+          </svg>
+          <div>
+            <p className="text-sm font-extrabold tracking-wide text-amber">
+              DO NOT CLOSE THIS PAGE, THIS IS A ONE-TIME OFFER
+            </p>
+            <p className="mt-1 font-medium text-cream">
+              Once you leave this page, you won&apos;t see this offer again.
+            </p>
+          </div>
+        </div>
 
-        <h1 className="mt-3 text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
+        <h1 className="mt-8 text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
           Your Free Seat Is Confirmed. Want to Upgrade to VIP Access and Get
           Personal Guidance?
         </h1>
@@ -105,19 +127,46 @@ export default async function UpsellPage() {
         {/* 2. The frame + contrast */}
         <div className="mt-8 max-w-xl space-y-4 text-left text-cream/80">
           <p>
-            Your registration for {WEBINAR_NAME} is locked in &mdash;
-            you&apos;re going to get massive value from the live
-            presentation. But here&apos;s the reality: once the live stream
-            ends, the standard broadcast room closes.
+            Your registration for {WEBINAR_NAME} is locked in, you&apos;re
+            going to get massive value from the live presentation. But
+            here&apos;s the reality: once the live stream ends, the
+            standard broadcast room closes.
           </p>
           <p>
-            Here&apos;s the difference between standard viewers and VIPs.
-            Standard viewers are passive listeners who forget most of what
-            they heard within 48 hours. VIPs are action-takers &mdash; they
-            get their exact bottlenecks unblocked in the private Q&amp;A and
-            keep lifetime access to the recordings to revisit anytime.
+            To not lose the feeling, the emotion, and the energy created
+            during the webinar, the VIP access guarantees that you can keep
+            that same energy with you at home by rewatching the whole
+            webinar whenever you want. It also allows you to remove your own
+            bottlenecks by participating in the Q&amp;A and getting your
+            questions answered by Fabio.
+          </p>
+          <p>
+            So, the main difference between those who watch it live and
+            those who decide to gain the VIP Access is this:
+          </p>
+          <p className="font-semibold text-cream">
+            Within 48 hours, the standard viewers have lost all of their
+            energy and momentum. The VIPs, however, can replicate all of
+            that at home at any point in time.
           </p>
         </div>
+
+        {/* CTAs: one prominent, one discreet */}
+        <a
+          href="#checkout"
+          className="mt-10 inline-flex w-full max-w-md items-center justify-center gap-2 rounded-full bg-amber px-8 py-5 text-lg font-bold text-cream shadow-xl shadow-amber/30 ring-4 ring-amber/20 transition hover:scale-[1.02] hover:brightness-110"
+        >
+          Yes, I Want VIP Access for {VIP_PRICE} &rarr;
+        </a>
+        <p className="mt-3 text-sm font-semibold text-amber">
+          This offer disappears the moment you leave this page.
+        </p>
+        <a
+          href="/"
+          className="mt-3 text-sm text-cream/40 underline hover:text-cream/70"
+        >
+          No thanks, skip this offer
+        </a>
 
         {/* 3. The two problems */}
         <div className="mt-10 w-full max-w-xl rounded-2xl border border-cream/10 bg-cream/5 p-6 text-left sm:p-8">
@@ -141,8 +190,8 @@ export default async function UpsellPage() {
               </p>
               <p className="mt-1 text-cream/70">
                 A presentation covers the strategy, but it can&apos;t
-                address your specific situation, team, or constraints
-                &mdash; unless you can ask questions directly.
+                address your specific situation, team, or constraints,
+                unless you can ask questions directly.
               </p>
             </div>
           </div>
@@ -233,9 +282,12 @@ export default async function UpsellPage() {
           </div>
 
           {/* 7. CTA + embedded checkout */}
-          <p className="mt-8 text-center text-lg font-bold text-cream">
-            Upgrade My Ticket to VIP &mdash; Add Q&amp;A, Recording &amp;
-            Slides for {VIP_PRICE}
+          <p
+            id="checkout"
+            className="mt-8 scroll-mt-6 text-center text-lg font-bold text-cream"
+          >
+            Upgrade My Ticket to VIP, Add Q&amp;A, Recording &amp; Slides
+            for {VIP_PRICE}
           </p>
 
           <div className="mt-4 overflow-hidden rounded-xl bg-white">
