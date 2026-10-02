@@ -39,15 +39,15 @@ export default async function ThankYouPage() {
 
   const steps = isVip
     ? [
-        "Check your inbox for your confirmation and calendar invite.",
-        `Join the live presentation on ${WEBINAR_DATE_LABEL}.`,
-        "Stay on for the VIP Q&A session right after the presentation.",
+        "Check your email for your invite and confirmation.",
+        `Join the live session on ${WEBINAR_DATE_LABEL}.`,
+        "Stay for the VIP Q&A right after the session.",
         "After the session, you'll get your full recording and the speaker slide deck.",
       ]
     : [
-        "Check your inbox for your confirmation and calendar invite.",
-        "Add the date to your calendar so you don't miss it.",
-        `Join us live on ${WEBINAR_DATE_LABEL}. There's no replay for free attendees, so make sure you're there for the whole session.`,
+        "Check your email for your invite and confirmation.",
+        "Save the date so you don't miss it.",
+        `Join us live on ${WEBINAR_DATE_LABEL}. Free guests get no replay, so stay for the whole session.`,
       ];
 
   return (
@@ -65,21 +65,21 @@ export default async function ThankYouPage() {
 
       <div className="mt-8 w-full max-w-xl rounded-2xl border border-navy/10 bg-white p-6 text-center shadow-xl sm:p-10">
         <span className="inline-flex items-center gap-2 rounded-full border border-amber/50 bg-amber/10 px-4 py-1.5 text-xs font-bold tracking-wide text-brown">
-          {isVip ? "VIP ACCESS CONFIRMED" : "YOU'RE REGISTERED"}
+          {isVip ? "VIP ACCESS READY" : "YOU'RE ON THE LIST"}
         </span>
 
         <h1 className="mt-5 text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
-          {isVip ? "You're In, Welcome to VIP!" : "You're All Set, See You Live!"}
+          {isVip ? "You're in, welcome to VIP!" : "You're all set, see you live!"}
         </h1>
 
         <p className="mt-4 text-navy/70">
           {isVip
-            ? `Thank you for upgrading. Your free seat for ${WEBINAR_NAME} is confirmed, and so is your VIP access.`
-            : `Thank you for registering for ${WEBINAR_NAME}. Your free seat is confirmed for ${WEBINAR_DATE_LABEL}.`}
+            ? `Thanks for going VIP. You have a seat at ${WEBINAR_NAME} and full VIP access.`
+            : `Thanks for signing up for ${WEBINAR_NAME}. We'll see you on ${WEBINAR_DATE_LABEL}.`}
         </p>
 
         <div className="mt-8 text-left">
-          <h2 className="text-lg font-bold">What happens next</h2>
+          <h2 className="text-lg font-bold">Here&apos;s what happens next.</h2>
           <ol className="mt-4 space-y-3">
             {steps.map((step, i) => (
               <li key={step} className="flex items-start gap-3">
@@ -94,7 +94,7 @@ export default async function ThankYouPage() {
 
         <div className="mt-8 flex flex-col items-center gap-3 border-t border-navy/10 pt-8">
           <p className="text-sm font-medium text-navy/60">
-            The live session starts in
+            The live session starts in:
           </p>
           <Countdown targetDate={WEBINAR_DATETIME_ISO} />
         </div>

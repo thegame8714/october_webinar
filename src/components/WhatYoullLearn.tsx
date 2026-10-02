@@ -1,7 +1,7 @@
 const bullets = [
-  "Leave with a real framework you can use on your next 1:1, not just theory",
-  'Understand why "communicate better" advice hasn\'t worked for you so far',
-  "See the specific technique behind Unbiased Reading — the step most managers skip entirely",
+  "Leave with a real framework you can use in your next 1:1, not just theory.",
+  'Learn why "communicate better" advice has not worked for you so far.',
+  "Learn the technique behind Unbiased Reading. Most managers skip this step.",
 ];
 
 export default function WhatYoullLearn() {
@@ -9,7 +9,7 @@ export default function WhatYoullLearn() {
     <section className="bg-white px-6 py-20 sm:py-28">
       <div className="mx-auto max-w-3xl">
         <h2 className="text-center text-3xl font-bold tracking-tight text-navy sm:text-4xl">
-          What You&apos;ll Walk Away With
+          Here&apos;s what you&apos;ll walk away with.
         </h2>
 
         <ul className="mt-12 space-y-6">

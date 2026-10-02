@@ -9,24 +9,24 @@ export default function SignupSection() {
       <div className="mx-auto grid max-w-5xl items-center gap-12 lg:grid-cols-2">
         <div className="text-navy">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            Reserve Your Free Spot Now
+            Reserve your free spot now.
           </h2>
           <p className="mt-4 text-lg text-navy/70">
-            Sign up now to guarantee access and get a reminder before we go
+            Sign up now to save your spot. We&apos;ll remind you before we go
             live.
           </p>
           <ul className="mt-8 space-y-3 text-navy/80">
             <li className="flex items-center gap-3">
               <span className="h-1.5 w-1.5 rounded-full bg-amber" />
-              Live Q&amp;A after the session
+              Learn the 4 U&apos;s live.
             </li>
             <li className="flex items-center gap-3">
               <span className="h-1.5 w-1.5 rounded-full bg-amber" />
-              Replay sent straight to your inbox
+              It&apos;s free to attend.
             </li>
             <li className="flex items-center gap-3">
               <span className="h-1.5 w-1.5 rounded-full bg-amber" />
-              Free resource pack for attendees
+              It works for any manager.
             </li>
           </ul>
         </div>

@@ -5,11 +5,11 @@ import {
   WEBINAR_DATETIME_ISO,
 } from "@/lib/webinar";
 
-const WEBINAR_HEADLINE = "You're clear, they are confused";
+const WEBINAR_HEADLINE = "You're clear, they are confused.";
 const WEBINAR_TAGLINE =
-  "Spend less time repeating yourself and more time coaching your team to perform";
+  "Spend less time repeating yourself and more time coaching your team to perform.";
 const WEBINAR_SUBHEADLINE =
-  "In 60 minutes, I'll walk you through the 4 U's — the exact framework I use to turn struggling team members around, built from my own years as an Engineering Manager, including the year I nearly stepped away from the role myself.";
+  "In 60 minutes, I'll show you the 4 U's. It's the exact framework I use to turn struggling team members around. I built it over my years as an Engineering Manager. That includes the year I nearly stepped away from the role myself.";
 
 // Self-hosted video (Vercel Blob) — set NEXT_PUBLIC_WEBINAR_VIDEO_URL in
 // your Vercel project's environment variables to the direct .mp4 blob URL.
@@ -96,7 +96,7 @@ export default function Hero() {
           </a>
         </div>
 
-        <p className="mt-6 text-sm text-navy/60">100% free to attend live</p>
+        <p className="mt-6 text-sm text-navy/60">100% free to attend live.</p>
       </div>
     </section>
   );

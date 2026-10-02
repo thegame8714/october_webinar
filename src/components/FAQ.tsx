@@ -5,28 +5,28 @@ import { useState } from "react";
 // TODO: keep in sync with your actual registration/VIP offer details
 const faqs = [
   {
-    question: "Is this actually worth my time, or a sales pitch in disguise?",
+    question: "Is this worth my time, or a sales pitch in disguise?",
     answer:
-      "The first 40 minutes are a full, real teaching session — you'll walk away with the framework whether or not you're ever interested in anything else. Near the end, I'll briefly mention how I help people go deeper, if that's useful to you.",
+      "The first 40 minutes are real teaching. You'll leave with the framework, even if you want nothing more. Near the end, I'll briefly share how I help people go deeper, if that helps you.",
   },
   {
     question: "Do I need a specific underperformer in mind?",
     answer:
-      "It helps, but it's not required — the framework applies to any team member.",
+      "It helps, but you don't need one. The framework works for any team member.",
   },
   {
     question: "Is this recorded if I can't make it live?",
     answer:
-      "The replay is only available with VIP access ($67) — see the option at registration. Live attendance is free either way.",
+      "Only VIP members get the replay ($67). You'll see the VIP option right after you register. Live attendance is free either way.",
   },
   {
     question: "What's the cost?",
     answer:
-      "Free to attend live. Optional $67 VIP add-on includes the recording.",
+      "It's free to attend live. The VIP add-on is optional and costs $67. It includes the recording.",
   },
   {
     question: "Is this for new managers, experienced managers, or both?",
-    answer: "Both, the 4 U's apply regardless of tenure.",
+    answer: "Both. The 4 U's work no matter how long you've managed.",
   },
 ];
 
@@ -38,7 +38,7 @@ export default function FAQ() {
       <div className="mx-auto max-w-3xl">
         <div className="text-center">
           <h2 className="text-3xl font-bold tracking-tight text-navy sm:text-4xl">
-            Frequently Asked Questions
+            Got questions? Here are the answers.
           </h2>
         </div>
 

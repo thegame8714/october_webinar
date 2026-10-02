@@ -122,12 +122,12 @@ export default function SignupForm() {
             className="mt-1 h-4 w-4 rounded border-navy/30 text-purple focus:ring-purple/40"
           />
           <span>
-            I agree to receive communications about this webinar and consent
-            to my data being processed in accordance with the{" "}
+            I agree to get messages about this session. I consent to you
+            using my data as the{" "}
             <a href="/privacy-policy" className="underline hover:text-purple">
               Privacy Policy
-            </a>
-            . You can unsubscribe at any time.
+            </a>{" "}
+            explains. I can unsubscribe at any time.
           </span>
         </label>
 

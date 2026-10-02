@@ -22,19 +22,19 @@ const DELIVERABLES = [
   {
     name: "Behind-the-Scenes VIP Q&A Session",
     description:
-      "Stay on an extended private session after the main presentation ends. Ask your questions live, get direct feedback, and hear real-world troubleshooting.",
+      "Stay for a private session after the talk. Ask your questions live. Get direct feedback and real-world fixes.",
     value: "$197",
   },
   {
     name: "Full HD Replay Vault + Timestamp Index",
     description:
-      "Lifetime, searchable access to the entire recording. Skip straight to the key frameworks anytime without re-watching the whole session.",
+      "Keep the full recording for life. Use the timestamps to jump to the key ideas.",
     value: "$97",
   },
   {
     name: "Speaker Slide Deck",
     description:
-      "The exact reference slides so you don't have to scramble taking notes during the session.",
+      "Get the exact slides. No need to rush and take notes.",
     value: "$47",
   },
 ];
@@ -42,11 +42,11 @@ const DELIVERABLES = [
 const TOTAL_VALUE = "$341";
 
 const COMPARISON_ROWS = [
-  { feature: "Access to the live presentation", free: true, vip: true },
-  { feature: "Extended live Q&A after the session", free: false, vip: true },
-  { feature: "Lifetime recording access", free: false, vip: true },
+  { feature: "Join the live session.", free: true, vip: true },
+  { feature: "Live Q&A after the session.", free: false, vip: true },
+  { feature: "Recording for life.", free: false, vip: true },
   {
-    feature: "Downloadable slides",
+    feature: "Slides to download.",
     free: false,
     vip: true,
   },
@@ -102,8 +102,8 @@ export default async function UpsellPage() {
             <span className="h-1.5 w-10 rounded-full bg-amber" />
             <span className="h-1.5 w-10 rounded-full bg-amber" />
           </div>
-          <p className="text-xs font-semibold tracking-wide text-navy/60">
-            STEP 2 OF 2 &middot; YOUR FREE SEAT IS RESERVED
+          <p className="text-xs font-semibold uppercase tracking-wide text-navy/60">
+            Step 2 of 2. You have a free seat.
           </p>
 
           <div
@@ -123,8 +123,8 @@ export default async function UpsellPage() {
               />
             </svg>
             <div>
-              <p className="text-sm font-extrabold tracking-wide text-brown">
-                DO NOT CLOSE THIS PAGE, THIS IS A ONE-TIME OFFER
+              <p className="text-sm font-extrabold uppercase tracking-wide text-brown">
+                Do not close this page. This is a one-time offer.
               </p>
               <p className="mt-1 font-medium text-navy">
                 Once you leave this page, you won&apos;t see this offer again.
@@ -133,33 +133,29 @@ export default async function UpsellPage() {
           </div>
 
           <h1 className="mt-8 text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
-            Your Free Seat Is Confirmed. Want to Upgrade to VIP Access and Get
-            Personal Guidance?
+            You&apos;re in! Want to upgrade to VIP and get personal guidance?
           </h1>
 
           <div className="mt-8 max-w-xl space-y-4 text-left text-navy/80">
             <p>
-              Your registration for {WEBINAR_NAME} is locked in, you&apos;re
-              going to get massive value from the live presentation. But
-              here&apos;s the reality: once the live stream ends, the
-              standard broadcast room closes.
+              You signed up for {WEBINAR_NAME}. You&apos;ll get great value
+              from the live session. But here&apos;s the catch. When the live
+              stream ends, the room closes.
             </p>
             <p>
-              To not lose the feeling, the emotion, and the energy created
-              during the webinar, the VIP access guarantees that you can keep
-              that same energy with you at home by rewatching the whole
-              webinar whenever you want. It also allows you to remove your own
-              bottlenecks by participating in the Q&amp;A and getting your
-              questions answered by Fabio.
+              Don&apos;t lose the feeling and the energy you get during the
+              webinar. With VIP, you can rewatch the whole webinar any time
+              and keep that energy at home. You can also join the Q&amp;A.
+              Fabio answers your questions, so you can clear your own
+              bottlenecks.
             </p>
             <p>
-              So, the main difference between those who watch it live and
-              those who decide to gain the VIP Access is this:
+              Here is the main difference between those who watch live and
+              those who get VIP Access.
             </p>
             <p className="font-semibold text-navy">
-              Within 48 hours, the standard viewers have lost all of their
-              energy and momentum. The VIPs, however, can replicate all of
-              that at home at any point in time.
+              Within 48 hours, standard viewers lose their energy and
+              drive. VIPs can bring it all back at home, any time.
             </p>
           </div>
 
@@ -167,10 +163,10 @@ export default async function UpsellPage() {
             href="#checkout"
             className="mt-10 inline-flex w-full max-w-md items-center justify-center gap-2 rounded-full bg-amber px-8 py-5 text-lg font-bold text-cream shadow-xl shadow-amber/30 ring-4 ring-amber/20 transition hover:scale-[1.02] hover:brightness-110"
           >
-            Yes, I Want VIP Access for {VIP_PRICE} &rarr;
+            Yes! I want VIP Access for {VIP_PRICE} &rarr;
           </a>
           <p className="mt-3 text-sm font-semibold text-brown">
-            This offer disappears the moment you leave this page.
+            This offer ends when you leave this page.
           </p>
           <a
             href={DECLINE_URL}
@@ -185,23 +181,21 @@ export default async function UpsellPage() {
       <section className="bg-white px-6 py-16 sm:py-20">
         <div className="mx-auto max-w-3xl">
           <h2 className="text-center text-3xl font-bold tracking-tight sm:text-4xl">
-            Two Things Every Free Webinar Runs Into
+            Two things every free webinar runs into.
           </h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2">
             <div className="rounded-2xl border border-navy/10 bg-cream p-6">
-              <p className="font-bold">The retention &amp; schedule problem</p>
+              <p className="font-bold">Problem 1: No replay.</p>
               <p className="mt-2 text-navy/70">
-                Life gets busy. If a meeting runs over or you want to
-                re-watch a specific framework, the free broadcast won&apos;t
-                have a public replay.
+                Life gets busy. A meeting may run over. Or you may want to
+                rewatch one idea. The free session has no public replay.
               </p>
             </div>
             <div className="rounded-2xl border border-navy/10 bg-cream p-6">
-              <p className="font-bold">The generic-vs-specific problem</p>
+              <p className="font-bold">Problem 2: Generic advice.</p>
               <p className="mt-2 text-navy/70">
-                A presentation covers the strategy, but it can&apos;t
-                address your specific situation, team, or constraints,
-                unless you can ask questions directly.
+                A talk shares the big ideas. It can&apos;t fit your own team
+                unless you ask questions.
               </p>
             </div>
           </div>
@@ -212,7 +206,7 @@ export default async function UpsellPage() {
       <section className="bg-navy px-6 py-16 sm:py-20">
         <div className="mx-auto max-w-2xl">
           <h2 className="text-center text-3xl font-bold tracking-tight text-cream sm:text-4xl">
-            Here&apos;s Everything You Get With VIP Access
+            Here&apos;s everything you get with VIP Access.
           </h2>
 
           <div className="mt-10 rounded-2xl border border-navy/10 bg-white p-6 shadow-sm sm:p-8">
@@ -278,13 +272,13 @@ export default async function UpsellPage() {
 
           <div className="mt-6 rounded-2xl border border-amber/40 bg-white p-6 text-center shadow-sm">
             <p className="text-sm text-navy/50 line-through">
-              Total value: {TOTAL_VALUE}
+              Total value: {TOTAL_VALUE}.
             </p>
             <p className="mt-1 text-sm text-navy/70">
-              Standard masterclass fee: $147
+              Standard masterclass fee: $147.
             </p>
             <p className="mt-2 text-sm font-medium text-navy/80">
-              Your price today
+              Your price today.
             </p>
             <p className="text-4xl font-bold text-amber">{VIP_PRICE}</p>
           </div>
@@ -298,8 +292,7 @@ export default async function UpsellPage() {
             id="checkout"
             className="scroll-mt-6 text-2xl font-bold tracking-tight sm:text-3xl"
           >
-            Upgrade My Ticket to VIP, Add Q&amp;A, Recording &amp; Slides for{" "}
-            {VIP_PRICE}
+            Upgrade your ticket to VIP.
           </h2>
 
           <div className="mt-8 overflow-hidden rounded-2xl border border-navy/10 bg-white shadow-xl">
@@ -312,7 +305,7 @@ export default async function UpsellPage() {
           </div>
 
           <p className="mt-3 text-xs text-navy/60">
-            Instant confirmation &middot; 30-day money-back guarantee.{" "}
+            Instant confirmation. 30-day money-back guarantee.{" "}
             <a
               href={GHL_ORDER_FORM_URL}
               target="_blank"
@@ -337,9 +330,8 @@ export default async function UpsellPage() {
             href={DECLINE_URL}
             className="mt-10 inline-block max-w-md text-sm text-navy/50 underline hover:text-navy"
           >
-            No thanks, I will only attend the free live session. I understand
-            that if I miss any part, there will be no replay access or chance
-            to ask questions.
+            No thanks, I will only attend the free live session. If I miss
+            any part, I get no replay and no chance to ask questions.
           </a>
         </div>
       </section>

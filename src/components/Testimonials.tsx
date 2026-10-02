@@ -31,7 +31,7 @@ export default function Testimonials() {
       <div className="mx-auto max-w-6xl">
         <div className="text-center">
           <h2 className="text-3xl font-bold tracking-tight text-cream sm:text-4xl">
-            What Past Attendees Are Saying
+            Here&apos;s what past attendees say.
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-cream/70">
             Don&apos;t just take our word for it.
