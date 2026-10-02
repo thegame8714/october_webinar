@@ -19,12 +19,12 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative overflow-hidden bg-gradient-to-b from-navy to-navy-dark text-cream"
+      className="relative overflow-hidden bg-sand text-navy"
     >
       {/* decorative background accents */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -top-24 -right-24 h-96 w-96 rounded-full bg-purple/20 blur-3xl"
+        className="pointer-events-none absolute -top-24 -right-24 h-96 w-96 rounded-full bg-amber/20 blur-3xl"
       />
       <div
         aria-hidden
@@ -32,7 +32,7 @@ export default function Hero() {
       />
 
       <div className="relative mx-auto flex max-w-3xl flex-col items-center px-6 py-14 text-center sm:py-24">
-        <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-amber/40 bg-amber/10 px-4 py-1.5 text-sm font-medium text-amber">
+        <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-amber/50 bg-amber/10 px-4 py-1.5 text-sm font-medium text-brown">
           {WEBINAR_NAME} &middot; Free Live Webinar &middot; {WEBINAR_DATE_LABEL}
         </span>
 
@@ -40,11 +40,11 @@ export default function Hero() {
           {WEBINAR_HEADLINE}
         </h1>
 
-        <p className="mt-3 max-w-xl text-sm text-cream/70 sm:text-base">
+        <p className="mt-3 max-w-xl text-sm text-navy/70 sm:text-base">
           {WEBINAR_TAGLINE}
         </p>
 
-        <div className="mt-8 w-full max-w-xs overflow-hidden rounded-2xl border border-cream/10 bg-navy shadow-xl sm:max-w-sm">
+        <div className="mt-8 w-full max-w-xs overflow-hidden rounded-2xl border border-navy/10 bg-navy shadow-xl sm:max-w-sm">
           <div className="relative aspect-[9/16] w-full">
             {videoUrl ? (
               <video
@@ -79,7 +79,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <p className="mt-6 max-w-2xl text-sm text-cream/70 sm:text-base">
+        <p className="mt-6 max-w-2xl text-sm text-navy/70 sm:text-base">
           {WEBINAR_SUBHEADLINE}
         </p>
 
@@ -96,7 +96,7 @@ export default function Hero() {
           </a>
         </div>
 
-        <p className="mt-6 text-sm text-cream/60">100% free to attend live</p>
+        <p className="mt-6 text-sm text-navy/60">100% free to attend live</p>
       </div>
     </section>
   );

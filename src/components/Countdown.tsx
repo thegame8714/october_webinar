@@ -41,7 +41,7 @@ export default function Countdown({ targetDate }: { targetDate: string }) {
 
   if (!timeLeft) {
     return (
-      <p className="text-sm font-semibold text-amber">
+      <p className="text-sm font-semibold text-brown">
         We&apos;re live right now!
       </p>
     );
@@ -59,12 +59,12 @@ export default function Countdown({ targetDate }: { targetDate: string }) {
       {units.map((unit) => (
         <div
           key={unit.label}
-          className="flex w-14 flex-col items-center rounded-xl border border-cream/10 bg-cream/5 py-2 sm:w-16"
+          className="flex w-14 flex-col items-center rounded-xl border border-navy/10 bg-white py-2 shadow-sm sm:w-16"
         >
-          <span className="text-xl font-bold tabular-nums text-cream sm:text-2xl">
+          <span className="text-xl font-bold tabular-nums text-navy sm:text-2xl">
             {String(unit.value).padStart(2, "0")}
           </span>
-          <span className="text-[10px] uppercase tracking-wide text-cream/50">
+          <span className="text-[10px] uppercase tracking-wide text-navy/50">
             {unit.label}
           </span>
         </div>

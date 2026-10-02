@@ -53,7 +53,7 @@ export default function SignupForm() {
 
   if (status === "success") {
     return (
-      <div className="rounded-2xl border border-amber/30 bg-cream p-8 text-center">
+      <div className="rounded-2xl border border-amber/30 bg-white p-8 text-center">
         <h3 className="text-2xl font-bold text-navy">You&apos;re in! 🎉</h3>
         <p className="mt-2 text-navy/70">
           Check your inbox for your confirmation and calendar invite.
@@ -63,7 +63,7 @@ export default function SignupForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="rounded-2xl bg-cream p-6 shadow-xl sm:p-8">
+    <form onSubmit={handleSubmit} className="rounded-2xl border border-navy/10 bg-white p-6 shadow-xl sm:p-8">
       <p className="mb-4 text-xs text-navy/50">
         <span className="text-red-600">*</span> Required
       </p>
@@ -79,7 +79,7 @@ export default function SignupForm() {
             required
             autoComplete="name"
             placeholder="Jane Doe"
-            className="w-full rounded-lg border border-navy/15 bg-white px-4 py-3 text-navy placeholder:text-navy/40 focus:border-purple focus:outline-none focus:ring-2 focus:ring-purple/30"
+            className="w-full rounded-lg border border-navy/20 bg-white px-4 py-3 text-navy placeholder:text-navy/40 focus:border-purple focus:outline-none focus:ring-2 focus:ring-purple/30"
           />
         </div>
 
@@ -94,7 +94,7 @@ export default function SignupForm() {
             required
             autoComplete="email"
             placeholder="jane@example.com"
-            className="w-full rounded-lg border border-navy/15 bg-white px-4 py-3 text-navy placeholder:text-navy/40 focus:border-purple focus:outline-none focus:ring-2 focus:ring-purple/30"
+            className="w-full rounded-lg border border-navy/20 bg-white px-4 py-3 text-navy placeholder:text-navy/40 focus:border-purple focus:outline-none focus:ring-2 focus:ring-purple/30"
           />
         </div>
 
@@ -109,7 +109,7 @@ export default function SignupForm() {
             required
             autoComplete="tel"
             placeholder="+1 (555) 000-0000"
-            className="w-full rounded-lg border border-navy/15 bg-white px-4 py-3 text-navy placeholder:text-navy/40 focus:border-purple focus:outline-none focus:ring-2 focus:ring-purple/30"
+            className="w-full rounded-lg border border-navy/20 bg-white px-4 py-3 text-navy placeholder:text-navy/40 focus:border-purple focus:outline-none focus:ring-2 focus:ring-purple/30"
           />
         </div>
 

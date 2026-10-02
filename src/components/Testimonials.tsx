@@ -42,9 +42,9 @@ export default function Testimonials() {
           {testimonials.map((t) => (
             <figure
               key={t.name}
-              className="flex flex-col justify-between rounded-2xl border border-cream/10 bg-cream/5 p-6"
+              className="flex flex-col justify-between rounded-2xl border border-navy/10 bg-white p-6 shadow-sm"
             >
-              <blockquote className="text-cream/90">
+              <blockquote className="text-navy/80">
                 <span className="text-3xl leading-none text-amber">
                   &ldquo;
                 </span>
@@ -55,14 +55,14 @@ export default function Testimonials() {
                   <Image
                     src={t.photo}
                     alt={t.name}
-                    width={40}
-                    height={40}
-                    className="h-10 w-10 flex-none rounded-full object-cover"
+                    width={50}
+                    height={50}
+                    className="h-[50px] w-[50px] flex-none rounded-full object-cover"
                   />
                 ) : (
                   <div
                     aria-hidden
-                    className="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-purple text-sm font-semibold text-cream"
+                    className="flex h-[50px] w-[50px] flex-none items-center justify-center rounded-full bg-purple text-sm font-semibold text-cream"
                   >
                     {t.name
                       .split(" ")
@@ -71,10 +71,10 @@ export default function Testimonials() {
                   </div>
                 )}
                 <div>
-                  <p className="text-sm font-semibold text-cream">
+                  <p className="text-sm font-semibold text-navy">
                     {t.name}
                   </p>
-                  <p className="text-xs text-cream/60">{t.role}</p>
+                  <p className="text-xs text-navy/60">{t.role}</p>
                 </div>
               </figcaption>
             </figure>

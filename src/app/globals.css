@@ -8,6 +8,7 @@
   --color-navy: #0f1f3d;
   --color-navy-dark: #0e1e40;
   --color-cream: #f4f2ed;
+  --color-sand: #ebe3d1;
   --color-brown: #482920;
   --color-purple: #6a5acd;
   --color-amber: #c47602;
@@ -19,6 +20,7 @@
   --color-navy: var(--color-navy);
   --color-navy-dark: var(--color-navy-dark);
   --color-cream: var(--color-cream);
+  --color-sand: var(--color-sand);
   --color-brown: var(--color-brown);
   --color-purple: var(--color-purple);
   --color-amber: var(--color-amber);

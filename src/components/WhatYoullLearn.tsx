@@ -6,7 +6,7 @@ const bullets = [
 
 export default function WhatYoullLearn() {
   return (
-    <section className="bg-cream px-6 py-20 sm:py-28">
+    <section className="bg-white px-6 py-20 sm:py-28">
       <div className="mx-auto max-w-3xl">
         <h2 className="text-center text-3xl font-bold tracking-tight text-navy sm:text-4xl">
           What You&apos;ll Walk Away With

@@ -2,11 +2,11 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-navy/95 backdrop-blur supports-[backdrop-filter]:bg-navy/80">
+    <header className="sticky top-0 z-50 border-b border-navy/10 bg-cream/95 backdrop-blur supports-[backdrop-filter]:bg-cream/80">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-2.5">
         <a href="#hero" aria-label="Leading Communication">
           <Image
-            src="/logo.png"
+            src="/logo-light.png"
             alt="Leading Communication"
             width={600}
             height={445}
