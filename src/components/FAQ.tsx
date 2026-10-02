@@ -1,34 +1,7 @@
 "use client";
 
 import { useState } from "react";
-
-// TODO: keep in sync with your actual registration/VIP offer details
-const faqs = [
-  {
-    question: "Is this worth my time, or a sales pitch in disguise?",
-    answer:
-      "The first 40 minutes are real teaching. You'll leave with the framework, even if you want nothing more. Near the end, I'll briefly share how I help people go deeper, if that helps you.",
-  },
-  {
-    question: "Do I need a specific underperformer in mind?",
-    answer:
-      "It helps, but you don't need one. The framework works for any team member.",
-  },
-  {
-    question: "Is this recorded if I can't make it live?",
-    answer:
-      "Only VIP members get the replay ($67). You'll see the VIP option right after you register. Live attendance is free either way.",
-  },
-  {
-    question: "What's the cost?",
-    answer:
-      "It's free to attend live. The VIP add-on is optional and costs $67. It includes the recording.",
-  },
-  {
-    question: "Is this for new managers, experienced managers, or both?",
-    answer: "Both. The 4 U's work no matter how long you've managed.",
-  },
-];
+import { faqs } from "@/lib/faqs";
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -38,7 +11,7 @@ export default function FAQ() {
       <div className="mx-auto max-w-3xl">
         <div className="text-center">
           <h2 className="text-3xl font-bold tracking-tight text-navy sm:text-4xl">
-            Got questions? Here are the answers.
+            Frequently asked questions.
           </h2>
         </div>
 
@@ -51,6 +24,7 @@ export default function FAQ() {
                   type="button"
                   onClick={() => setOpenIndex(isOpen ? null : index)}
                   aria-expanded={isOpen}
+                  aria-controls={`faq-answer-${index}`}
                   className="flex w-full items-center justify-between gap-4 py-5 text-left"
                 >
                   <span className="font-semibold text-navy">
@@ -65,9 +39,13 @@ export default function FAQ() {
                     +
                   </span>
                 </button>
-                {isOpen && (
-                  <p className="pb-5 pr-10 text-navy/70">{faq.answer}</p>
-                )}
+                <p
+                  id={`faq-answer-${index}`}
+                  hidden={!isOpen}
+                  className="pb-5 pr-10 text-navy/70"
+                >
+                  {faq.answer}
+                </p>
               </div>
             );
           })}
