@@ -26,9 +26,9 @@ const DELIVERABLES = [
     value: "$197",
   },
   {
-    name: "Full HD Replay Vault + Timestamp Index",
+    name: "Full HD Replay Vault",
     description:
-      "Keep the full recording for life. Use the timestamps to jump to the key ideas.",
+      "Keep the full recording for life and rewatch it any time.",
     value: "$97",
   },
   {
@@ -273,9 +273,6 @@ export default async function UpsellPage() {
           <div className="mt-6 rounded-2xl border border-amber/40 bg-white p-6 text-center shadow-sm">
             <p className="text-sm text-navy/50 line-through">
               Total value: {TOTAL_VALUE}.
-            </p>
-            <p className="mt-1 text-sm text-navy/70">
-              Standard masterclass fee: $147.
             </p>
             <p className="mt-2 text-sm font-medium text-navy/80">
               Your price today.
