@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Countdown from "./Countdown";
 import {
   WEBINAR_NAME,
@@ -9,7 +10,7 @@ const WEBINAR_HEADLINE = "You're clear, they are confused.";
 const WEBINAR_TAGLINE =
   "Spend less time repeating yourself and more time coaching your team to perform.";
 const WEBINAR_SUBHEADLINE =
-  "In 60 minutes, I'll show you the 4 U's. It's the exact framework I use to turn struggling team members around. I built it over my years as an Engineering Manager. That includes the year I nearly stepped away from the role myself.";
+  "In 60 minutes, learn how to communicate with each type of team member. These methods come from my own research and years of experience. Meet their needs, help them understand you, and build a stronger relationship.";
 
 // Self-hosted video (Vercel Blob) — set NEXT_PUBLIC_WEBINAR_VIDEO_URL in
 // your Vercel project's environment variables to the direct .mp4 blob URL.
@@ -44,18 +45,29 @@ export default function Hero() {
           {WEBINAR_TAGLINE}
         </p>
 
-        <div className="mt-8 w-full max-w-xs overflow-hidden rounded-2xl border border-navy/10 bg-navy shadow-xl sm:max-w-sm">
-          <div className="relative aspect-[9/16] w-full">
+        <div className="mt-8 w-full max-w-xs overflow-hidden rounded-[20px] border border-navy/10 bg-navy shadow-2xl sm:max-w-2xl">
+          <div className="relative aspect-[9/16] w-full sm:aspect-video">
             {videoUrl ? (
-              <video
-                src={videoUrl}
-                controls
-                preload="metadata"
-                playsInline
-                className="absolute inset-0 h-full w-full object-cover"
-              >
-                Your browser does not support the video tag.
-              </video>
+              <>
+                <Image
+                  src="/video-poster.jpg"
+                  alt=""
+                  aria-hidden
+                  fill
+                  sizes="672px"
+                  className="scale-110 object-cover opacity-80 blur-2xl"
+                />
+                <video
+                  src={videoUrl}
+                  poster="/video-poster.jpg"
+                  controls
+                  preload="metadata"
+                  playsInline
+                  className="absolute inset-0 h-full w-full object-contain"
+                >
+                  Your browser does not support the video tag.
+                </video>
+              </>
             ) : (
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-gradient-to-br from-navy to-navy-dark text-cream/80">
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-amber/90">
