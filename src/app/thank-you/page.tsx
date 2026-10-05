@@ -41,27 +41,32 @@ export default async function ThankYouPage() {
 
   const isVip = outcome === "vip";
 
+  const whatsappStep = (
+    <>
+      Join the{" "}
+      <a
+        href={WHATSAPP_COMMUNITY_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="font-semibold text-navy underline hover:text-purple"
+      >
+        WhatsApp community
+      </a>
+      .
+    </>
+  );
+
   const steps: ReactNode[] = isVip
     ? [
         "Check your email for your invite and confirmation.",
-        <>
-          Join the{" "}
-          <a
-            href={WHATSAPP_COMMUNITY_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-semibold text-navy underline hover:text-purple"
-          >
-            WhatsApp community
-          </a>
-          .
-        </>,
+        whatsappStep,
         `Join the live session on ${WEBINAR_DATE_LABEL}.`,
         "Join the VIP Q&A after the main session. Use the link we emailed you.",
         "After the session, you'll get your full recording and the speaker slide deck.",
       ]
     : [
         "Check your email for your invite and confirmation.",
+        whatsappStep,
         "Save the date so you don't miss it.",
         `Join us live on ${WEBINAR_DATE_LABEL}. Free guests get no replay, so stay for the whole session.`,
       ];
