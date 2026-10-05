@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import Image from "next/image";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
@@ -19,6 +20,9 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
+const WHATSAPP_COMMUNITY_URL =
+  "https://chat.whatsapp.com/GY6v879fUjdEA0Ykq8p2pS?s=sw&p=i&mlu=4";
+
 // After a payment the checkout iframe redirects itself here. Break out of the
 // frame so the visitor sees a full-page thank-you instead of a tiny embedded one.
 const BREAK_OUT_OF_FRAME = `try{if(window.top&&window.top!==window.self){window.top.location.replace(window.location.href);document.documentElement.style.display="none";}}catch(e){}`;
@@ -37,11 +41,23 @@ export default async function ThankYouPage() {
 
   const isVip = outcome === "vip";
 
-  const steps = isVip
+  const steps: ReactNode[] = isVip
     ? [
         "Check your email for your invite and confirmation.",
+        <>
+          Join the{" "}
+          <a
+            href={WHATSAPP_COMMUNITY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-navy underline hover:text-purple"
+          >
+            WhatsApp community
+          </a>
+          .
+        </>,
         `Join the live session on ${WEBINAR_DATE_LABEL}.`,
-        "Stay for the VIP Q&A right after the session.",
+        "Join the VIP Q&A after the main session. Use the link we emailed you.",
         "After the session, you'll get your full recording and the speaker slide deck.",
       ]
     : [
@@ -82,7 +98,7 @@ export default async function ThankYouPage() {
           <h2 className="text-lg font-bold">Here&apos;s what happens next.</h2>
           <ol className="mt-4 space-y-3">
             {steps.map((step, i) => (
-              <li key={step} className="flex items-start gap-3">
+              <li key={i} className="flex items-start gap-3">
                 <span className="mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-full bg-purple/10 text-xs font-bold text-purple">
                   {i + 1}
                 </span>
