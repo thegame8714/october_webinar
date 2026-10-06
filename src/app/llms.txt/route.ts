@@ -4,6 +4,8 @@ import {
   SITE_NAME,
   SITE_DESCRIPTION,
   HOST_NAME,
+  BUSINESS_NAME,
+  SOCIAL_LINKS,
 } from "@/lib/site";
 import { WEBINAR_DATE_LABEL } from "@/lib/webinar";
 
@@ -20,10 +22,14 @@ ${SITE_NAME} is a free live online webinar hosted by ${HOST_NAME}, an engineerin
 
 - Event: ${SITE_NAME}, a free live webinar (online)
 - Date: ${WEBINAR_DATE_LABEL}
-- Host: ${HOST_NAME}
+- Host: ${HOST_NAME} (${BUSINESS_NAME})
 - Cost: free to attend live. An optional VIP add-on costs $67 and includes the replay, the live Q&A, and the slide deck.
 - Audience: works mainly for engineering managers, and is good for all managers.
 - Register: ${SITE_URL}
+
+## Profiles
+
+${SOCIAL_LINKS.map((link) => `- [${link.label}](${link.url})`).join("\n")}
 
 ## Pages
 

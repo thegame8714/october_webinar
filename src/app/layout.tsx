@@ -13,6 +13,7 @@ import {
   SITE_TITLE,
   SITE_DESCRIPTION,
   HOST_NAME,
+  BUSINESS_NAME,
 } from "@/lib/site";
 
 const geistSans = Geist({
@@ -32,6 +33,7 @@ export const metadata: Metadata = {
   applicationName: SITE_NAME,
   authors: [{ name: HOST_NAME }],
   creator: HOST_NAME,
+  publisher: BUSINESS_NAME,
   robots: {
     index: true,
     follow: true,

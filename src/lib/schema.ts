@@ -3,6 +3,7 @@ import {
   SITE_NAME,
   SITE_DESCRIPTION,
   HOST_NAME,
+  BUSINESS_NAME,
   SAME_AS,
 } from "./site";
 import { WEBINAR_NAME, WEBINAR_DATETIME_ISO } from "./webinar";
@@ -17,7 +18,8 @@ export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "@id": ORGANIZATION_ID,
-  name: SITE_NAME,
+  name: BUSINESS_NAME,
+  brand: { "@type": "Brand", name: SITE_NAME },
   url: SITE_URL,
   logo: { "@type": "ImageObject", url: `${SITE_URL}/logo-light.png` },
   description: SITE_DESCRIPTION,
@@ -45,6 +47,7 @@ export const hostSchema = {
     "Engineering manager for more than 5 years. For the past two years, a coach who helps engineering managers lead in the age of AI.",
   url: SITE_URL,
   worksFor: { "@id": ORGANIZATION_ID },
+  sameAs: SAME_AS,
   knowsAbout: [
     "Team communication",
     "Engineering management",
