@@ -61,7 +61,7 @@ export default function Testimonials() {
                 {t.photo ? (
                   <Image
                     src={t.photo}
-                    alt={t.name}
+                    alt={`Portrait of ${t.name}, ${t.role}`}
                     width={50}
                     height={50}
                     className="h-[50px] w-[50px] flex-none rounded-full object-cover"

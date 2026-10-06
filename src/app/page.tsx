@@ -7,7 +7,7 @@ import FAQ from "@/components/FAQ";
 import SignupSection from "@/components/SignupSection";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
-import { eventSchema, faqSchema } from "@/lib/schema";
+import { eventSchema, faqSchema, videoSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
@@ -17,6 +17,7 @@ export default function Home() {
   return (
     <>
       <JsonLd data={eventSchema} />
+      <JsonLd data={videoSchema} />
       <JsonLd data={faqSchema} />
       <Header />
       <main>

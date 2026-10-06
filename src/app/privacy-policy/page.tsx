@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+// Keep this page out of search results until the real policy replaces the placeholder.
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  robots: { index: false, follow: true },
+};
+
 // TODO: replace with your actual privacy policy / GDPR data-processing terms
 export default function PrivacyPolicy() {
   return (

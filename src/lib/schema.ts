@@ -7,8 +7,11 @@ import {
 } from "./site";
 import { WEBINAR_NAME, WEBINAR_DATETIME_ISO } from "./webinar";
 import { faqs } from "./faqs";
+import { VIDEO_TRANSCRIPT } from "./transcript";
 
 const ORGANIZATION_ID = `${SITE_URL}/#organization`;
+const WEBSITE_ID = `${SITE_URL}/#website`;
+const HOST_ID = `${SITE_URL}/#host`;
 
 export const organizationSchema = {
   "@context": "https://schema.org",
@@ -19,6 +22,34 @@ export const organizationSchema = {
   logo: { "@type": "ImageObject", url: `${SITE_URL}/logo-light.png` },
   description: SITE_DESCRIPTION,
   ...(SAME_AS.length > 0 && { sameAs: SAME_AS }),
+};
+
+export const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": WEBSITE_ID,
+  url: SITE_URL,
+  name: SITE_NAME,
+  description: SITE_DESCRIPTION,
+  inLanguage: "en",
+  publisher: { "@id": ORGANIZATION_ID },
+};
+
+export const hostSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": HOST_ID,
+  name: HOST_NAME,
+  jobTitle: "Engineering manager and coach for engineering managers",
+  description:
+    "Engineering manager for more than 5 years. For the past two years, a coach who helps engineering managers lead in the age of AI.",
+  url: SITE_URL,
+  worksFor: { "@id": ORGANIZATION_ID },
+  knowsAbout: [
+    "Team communication",
+    "Engineering management",
+    "Coaching engineering managers",
+  ],
 };
 
 export const eventSchema = {
@@ -34,7 +65,7 @@ export const eventSchema = {
   inLanguage: "en",
   isAccessibleForFree: true,
   organizer: { "@id": ORGANIZATION_ID },
-  performer: { "@type": "Person", name: HOST_NAME },
+  performer: { "@id": HOST_ID },
   offers: {
     "@type": "Offer",
     url: SITE_URL,
@@ -42,6 +73,24 @@ export const eventSchema = {
     priceCurrency: "USD",
     availability: "https://schema.org/InStock",
   },
+};
+
+export const videoSchema = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: `Welcome to ${WEBINAR_NAME}`,
+  description:
+    "Fabio Salimbeni explains why being clear is not enough, and how the webinar teaches you to adapt your communication to each team member.",
+  thumbnailUrl: `${SITE_URL}/video-poster.jpg`,
+  uploadDate: "2026-10-02",
+  duration: "PT1M25S",
+  inLanguage: "en",
+  ...(process.env.NEXT_PUBLIC_WEBINAR_VIDEO_URL && {
+    contentUrl: process.env.NEXT_PUBLIC_WEBINAR_VIDEO_URL,
+  }),
+  transcript: VIDEO_TRANSCRIPT.join(" "),
+  author: { "@id": HOST_ID },
+  publisher: { "@id": ORGANIZATION_ID },
 };
 
 export const faqSchema = {

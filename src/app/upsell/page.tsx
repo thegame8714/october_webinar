@@ -8,6 +8,7 @@ import { WEBINAR_NAME } from "@/lib/webinar";
 export const metadata: Metadata = {
   title: "VIP Access, One More Step",
   description: "Upgrade your free registration to VIP access.",
+  robots: { index: false, follow: false },
 };
 
 // TODO: replace with your real GHL order form URL if this one changes
